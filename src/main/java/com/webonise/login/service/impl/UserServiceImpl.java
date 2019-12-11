@@ -24,7 +24,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean login(String loginId, String password) {
-        UserEntity user = userEntityDao.findByLoginIdAndPassword(loginId, password);
+        //UserEntity user = userEntityDao.findByLoginIdAndPassword(loginId, password);
+    	UserEntity user = userEntityDao.findFirstByLoginIdAndPassword(loginId, password);
         return user != null;
     }
 }
